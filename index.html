@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up Form</title>
+    <link rel="stylesheet" href="./style.css">
+
+
+</head>
+<body>
+    <div class="image-container">
+        <div class="logo-container"> 
+            <img src=""  /> 
+            <p class="logo">ABC Trip</p>
+        </div>
+    </div>
+    <div class="form-container">
+        <div class="form-intro">
+            <h1>START YOUR TRIP TODAY!</h1>
+        </div>
+        <div class="form-content">
+            <div class="form-title">
+                <h2>Create Account</h2>
+                <p>Required fields are labeled with <span class="red">required</span>.</p>
+            </div>
+            <form class="user-form">
+                <div class="input-data">
+                    <label for="first-name" class="form-label">First Name</label>
+                    <input 
+                    type="text" 
+                    name="first-name" 
+                    id="first-name" 
+                    placeholder=""
+                    pattern="[A-Za-z]+"
+                    required/>
+                    <span></span>
+                    <p class="errormsg"></p>
+                </div>
+                <div class="input-data">
+                    <label for="last-name" class="form-label">Last Name</label>
+                    <input 
+                    type="text" 
+                    ame="last-name" 
+                    id="last-name" 
+                    placeholder="" 
+                    pattern="[A-Za-z]+"/>           
+                    <span></span>
+                    <p class="errormsg"></p>            
+                </div>
+                <div class="input-data">
+                    <label for="email" class="form-label">Email</label>
+                    <input 
+                    type="email" 
+                    name="email" 
+                    id="email" 
+                    placeholder="" 
+                    required/>
+                    <span></span>
+                    <p class="errormsg"></p>                    
+                </div>
+                <div class="input-data">
+                    <label for="phone-num" class="form-label">Phone Number</label>
+                    <input 
+                    type="tel" 
+                    name="phone-num" 
+                    id="phone-num" 
+                    placeholder="" 
+                    pattern="[0-9]+"/>  
+                    <span></span>
+                    <p class="errormsg"></p>                     
+                </div>
+                <div class="input-data">
+                    <label for="pwd" class="form-label">Password</label>
+                    <input 
+                    type="password" 
+                    name="pwd" 
+                    id="pwd" 
+                    placeholder="" 
+                    onkeyup="con()"
+                    required/>
+                    <span></span>    
+                    <p class="errormsg"></p>                
+                </div>
+                <div class="input-data">
+                    <label for="confirm-pwd" class="form-label">Confirm Password</label>
+                    <input 
+                    type="password" 
+                    name="confirm-pwd" 
+                    id="confirm-pwd" 
+                    placeholder="" 
+                    required
+                    onkeyup="con()"/>
+                    <span></span>    
+                    <p class="errormsg"></p>                    
+                </div>
+                <div class="submit-btn">
+                    <button type="submit" id="submit-btn">Sign Up</button>
+                </div>
+            </form>
+            <div class="login">
+                <p>Already have an account? <a href="#">Log in >>></a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const inputs = document.querySelectorAll("input");
+        const submitBtn = document.querySelector("#submit-btn")
+        const pwd = document.querySelector("#pwd")
+        const confirmPwd = document.querySelector("#confirm-pwd")
+
+        submitBtn.addEventListener("click", err)
+
+        function err(){
+            inputs.forEach(input => {input.addEventListener("invalid",
+            event => {input.classList.add("error");
+        },false);
+        })};
+
+        function con(){
+            const pw = pwd.value;
+            const cpw = confirmPwd.value
+
+            if (cpw != pw){
+                confirmPwd.setCustomValidity("Invalid field.");
+            }
+                else{
+                confirmPwd.setCustomValidity("")
+                }
+            }
+
+    </script>
+</body>
+</html>

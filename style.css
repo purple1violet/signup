@@ -1,0 +1,301 @@
+/*main*/
+:root {
+    --brown: #fff7e6;
+    --white: #ffffff;
+    --darkgreen:#4b4828;
+    --darkgrey:#413c2c;
+    --lightgrey:#6e6965;
+    --cream: #ded6bd85;
+    --pink: #D55C5F;
+  }
+
+  @font-face {
+    font-family: "Josefin Sans";
+    src:
+      url("./fonts/josefinsans-regular-webfont.woff2") format("woff2"),
+      url("./fonts/josefinsans-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: "handwriting";
+    src:
+      url("./fonts/journal-webfont.woff2") format("woff2"),
+      url("./fonts/journal-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+
+html,body{
+    min-height: 100vh;
+}
+
+body{
+    margin:0;
+    padding:0;
+    display: flex;
+    flex-direction: row; 
+}
+
+
+/*image*/
+.image-container{
+width: 35vw;
+flex-grow: 1;
+background:url("./image/3.JPEG");
+background-size: cover;
+background-position: center;
+position: relative;
+
+}
+
+.logo {
+    margin-top: 30vh;
+    background-color: var(--cream);
+    text-align: center;
+    height:8rem;
+    font-family: "handwriting";
+    font-size: 5rem;
+    letter-spacing: 2px;
+    text-align: center;
+} 
+
+
+
+/*form structure*/
+
+.form-container{
+    width: 65vw;
+    padding:0px;
+    flex-grow: 1;
+    background-color:var(--darkgreen);
+    color:#fff;
+}
+
+.form-intro{
+    display:block;
+    margin:16px 25px;
+    text-align: center;
+}
+
+h1{
+    margin:0px;
+    padding:0px;
+    font-family:"handwriting";
+    font-size: 4.1vw;
+    font-weight: bold;
+    letter-spacing: 10px;
+
+}
+
+.form-content{
+    padding:20px 40px;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--cream);
+    color:white;
+    
+}
+h2{
+    font-size: 35px;
+    letter-spacing: 2px;
+}
+
+.form-title{
+    margin-left: 6px;
+}
+.form-title p{
+    font-size: 12px;
+    background-color: var(--darkgrey);
+    padding:5px;
+    width: fit-content;
+}
+
+.red{
+    color: rgb(253, 255, 145);
+}
+
+.user-form{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin:30px auto;
+    
+}
+
+.input-data{
+    display:block;
+    width:49%;
+    height:6.5rem;
+    margin: auto;
+}
+
+.input-data label, .errormsg{
+    display: block;
+    margin-bottom: 8px;
+}
+
+.input-data input{
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 2px solid var(--lightgrey);
+    padding: 11px 8px;
+    font-size: 16px;
+    font-size: 1rem;
+    border-radius: 5px;
+    width:85%;
+}
+button{
+    font-family: 'Josefin Sans', sans-serif;
+    display:block;
+    border-radius: 5px;
+    border:1px solid var(--darkgrey);
+    background-color:var(--darkgrey);
+    color: white;
+    font-size:1.2rem;
+    padding: 20px;
+    letter-spacing: 6px;
+    font-weight: bold;
+    width:20vw;
+}
+
+.submit-btn{
+    margin:0px auto;
+}
+
+
+a{
+    text-decoration: none;
+}
+a:hover {
+    color: yellow;
+  }
+
+/*action*/
+input:focus, input:hover,
+button:focus, button:hover{
+    outline-color:var(--darkgery);
+    border-color:var(--darkgery);
+    background-color: var(--brown);
+    color:var(--darkgrey);
+}
+
+input + span {
+  position: relative;
+}
+
+input:required + span::after {
+  font-size: 0.7rem;
+  position: absolute;
+  content: "required";
+  color: white;
+  background-color:  var(--darkgrey);
+  padding: 5px 10px;
+  top: -40px;
+  left: -65px;
+}
+
+input:not(:placeholder-shown):invalid,
+input.error{
+  border: 2px solid var(--pink);
+  color: var(--pink);
+}
+
+input:not(:placeholder-shown):valid{
+    border: 2px solid var(--darkgrey);
+    color: var(--darkgrey);
+}
+
+input + span::before {
+  position: absolute;
+  right: -20px;
+  top: 5px;
+}  
+  
+input:not(:focus):not(:placeholder-shown):invalid + span::before {
+  content: "✖";
+  font-size: 20px;
+  color: rgb(255, 35, 35);
+}
+  
+input:not(:focus):not(:placeholder-shown):valid + span::before {
+  content: "✓";
+  font-size: 20px;
+  color: rgb(18, 255, 18);
+}
+
+/*error msg*/
+.errormsg{
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    width: fit-content;
+    color: var(--white);
+    background-color: var(--pink);
+}
+
+input#first-name:not(:focus):not(:placeholder-shown):invalid ~ p::before{
+    content: "⚠️ Please enter your first name.";
+}
+
+input#last-name:not(:focus):not(:placeholder-shown):invalid ~ p::before{
+    content: "⚠️ Please enter your last name.";
+}
+
+input#email:not(:focus):not(:placeholder-shown):invalid ~ p::before {
+    content: "⚠️ Please enter a valid email.";
+}
+
+input#phone-num:not(:focus):not(:placeholder-shown):invalid ~ p::before {
+    content: "⚠️ Please enter a valid phone number.";
+}
+
+input#pwd:not(:focus):not(:placeholder-shown):invalid ~ p::before {
+    content: "⚠️ Please enter a valid phone number.";
+}
+
+input#confirm-pwd:not(:focus):not(:placeholder-shown):invalid ~ p::before {
+    content: "⚠️ Passwords do not match.";
+}
+
+
+@media only screen and (max-width: 850px) {
+    body{
+        flex-direction: column;
+    }
+    .image-container{
+        width: 100vw;
+        height: 30vh;
+    }
+    .form-container{
+        width:100vw;
+    }
+
+    .form-title{
+        text-align: center;
+    }
+    .form-title p{
+        margin:0px auto;
+    }
+ 
+    .user-form {
+      flex-direction: column;
+    }
+    .input-data{
+        width:80%;
+        text-align: left;
+    }
+    .input-data input {
+      width: 100%;
+      padding:7px;
+    }
+    button{
+        width:40vw;
+    }
+    .logo{
+        margin-top:5vh
+    }
+
+  }
+
