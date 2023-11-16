@@ -5,7 +5,6 @@
     --darkgreen:#3a3608;
     --darkgrey:#413c2c;
     --lightgrey:#6e6965;
-    --cream: #ded6bd85;
     --pink: #D55C5F;
   }
 
@@ -52,6 +51,7 @@ position: relative;
 
 }
 
+/*
 .logo {
     margin-top: 30vh;
     background-color: var(--cream);
@@ -60,8 +60,8 @@ position: relative;
     font-family: "handwriting";
     font-size: 5rem;
     letter-spacing: 2px;
-    text-align: center;
 } 
+*/
 
 
 
@@ -169,9 +169,10 @@ button{
 
 a{
     text-decoration: none;
+    color:slateblue;
 }
 a:hover {
-    color: yellow;
+    color: var(--pink)
   }
 
 /*action*/
@@ -294,9 +295,11 @@ input#confirm-pwd:not(:focus):not(:placeholder-shown):invalid ~ p::before {
     button{
         width:40vw;
     }
+    /*
     .logo{
         margin-top:5vh
     }
+    */
 
   }
 
