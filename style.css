@@ -38,7 +38,7 @@ body{
     display: flex;
     flex-direction: row; 
 }
-
+/*for iOS*/
 input::placeholder{
     overflow:visible;
 }
