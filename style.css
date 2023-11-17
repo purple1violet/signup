@@ -288,7 +288,7 @@ input#confirm-pwd:not(:focus):not(:placeholder-shown):invalid ~ p::before {
       flex-direction: column;
     }
     .input-data{
-        width:80%;
+        width:90%;
         text-align: left;
     }
     .input-data input {
@@ -297,6 +297,8 @@ input#confirm-pwd:not(:focus):not(:placeholder-shown):invalid ~ p::before {
     }
     button{
         width:40vw;
+        font-size: 1rem;
+        padding: 12px;
     }
     /*
     .logo{
