@@ -39,6 +39,9 @@ body{
     flex-direction: row; 
 }
 
+input::placeholder{
+    overflow:visible;
+}
 
 /*image*/
 .image-container{
