@@ -288,8 +288,11 @@ input#confirm-pwd:not(:focus):not(:placeholder-shown):invalid ~ p::before {
       flex-direction: column;
     }
     .input-data{
-        width:90%;
+        width:95%;
         text-align: left;
+    }
+    input{
+        margin-bottom: -5px;
     }
     .input-data input {
       width: 100%;
